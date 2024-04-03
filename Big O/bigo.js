@@ -1,20 +1,24 @@
 const raviranjan = ["raviranjan"];
-const fruits = ["Mango", "Guava", "Apple", "orange"];
+const fruits = ["Mango", "Guava", "Apple", "raviranjan", "orange", "pineapple"];
 
 const largeArr = new Array(1000).fill("raviranjan");
 
 function findRaviranjan(array) {
   // let t0 = performance.now();
   for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
     if (array[i] === "raviranjan") {
       console.log("Found RAVIRANJAN");
+      break;
     }
   }
   // let t1 = performance.now();
   // console.log("Call to find Raviranjan took " + (t1 - t0) + " milliseconds");
 }
 
-// findRaviranjan(largeArr);
+findRaviranjan(fruits);
+
+// ----NEXT----
 
 // #Big O Cheat Sheet:
 // -Big OsO(1) Constant- no loops
@@ -44,6 +48,8 @@ function findRaviranjan(array) {
 // Function Call
 // Allocations
 
+// ----NEXT----
+
 const boxes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function firstTwoBoxes(boxes) {
@@ -52,3 +58,88 @@ function firstTwoBoxes(boxes) {
 }
 
 firstTwoBoxes(boxes); // O(2)
+
+// ----NEXT----
+
+function funChallenge(input) {
+  let a = 10; // O(1)
+  a = 50 + 3; // O(1)
+
+  for (let i = 0; i < input.length; i++) {
+    // O(n)
+    anotherFunction(); // O(n)
+    let stranger = true; // O(n)
+    a++; // O(n)
+  }
+  return a; // O(1)
+}
+// funChallenge(); // BIG O = (3 + 4n) === O(n)
+
+// ----NEXT----
+
+function anotherFunChallenge(input) {
+  let a = 5; // O(1)
+  let b = 10; // O(1)
+  let c = 50; // O(1)
+  for (let i = 0; i < input; i++) {
+    // O(n)
+    let x = i + 1; // O(n)
+    let y = i + 2; // O(n)
+    let z = i + 3; // O(n)
+  }
+  for (let j = 0; j < input; j++) {
+    // O(n)
+    let p = j * 2; // O(n)
+    let q = j * 2; // O(n)
+  }
+  let whoAmI = "I don't know"; // O(1)
+}
+// BIG O = 4 + 7n = O(n)
+
+// ----NEXT----
+function printFirstItemThenFirstHalfThenSayHi100Times(items) {
+  console.log(items[0]);
+
+  var middleIndex = Math.floor(items.length / 2);
+  var index = 0;
+
+  while (index < middleIndex) {
+    console.log(items[index]);
+    index++;
+  }
+
+  for (var i = 0; i < 100; i++) {
+    console.log("hi");
+  }
+} // O(1) + O(n/2) + O(100) = O(n)
+
+// ----NEXT----
+const boxes1 = ["a", "b", "c", "d", "e"];
+function logAllPairsOfArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+      console.log(array[i], array[j]);
+    }
+  }
+}
+
+logAllPairsOfArray(boxes1); // O(n * n) = O(n^2)
+
+// ----NEXT----
+function compressBoxesTwice(boxes, boxes2) {
+  boxes.forEach(element => console.log(element));
+  boxes2.forEach(element => console.log(element));
+} // O(a + b)
+
+// ----NEXT----
+function printAllNumbersThenAllPairSums(numbers) {
+  console.log("These are the numbers:");
+  numbers.forEach(elements => console.log(elements));
+
+  console.log("And these are their sums:");
+  numbers.forEach(firstNumber => {
+    numbers.forEach(secondNumber => console.log(firstNumber + secondNumber));
+  });
+}
+
+printAllNumbersThenAllPairSums([1, 2, 3, 4, 5]); // O(n * n) = O(n^2)
