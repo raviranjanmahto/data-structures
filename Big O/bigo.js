@@ -16,7 +16,22 @@ function findRaviranjan(array) {
   // console.log("Call to find Raviranjan took " + (t1 - t0) + " milliseconds");
 }
 
-findRaviranjan(fruits);
+const findRaviranjan2 = array => {
+  array.forEach(element => {
+    if (element === "raviranjan") console.log("Found RAVIRANJAN");
+  });
+};
+
+const findRaviranjan3 = array => {
+  for (let element of array) {
+    if (element === "raviranjan") console.log("Found RAVIRANJAN");
+  }
+};
+// findRaviranjan3(fruits);
+
+// findRaviranjan2(fruits);
+
+// findRaviranjan(fruits);
 
 // ----NEXT----
 
@@ -57,7 +72,7 @@ function firstTwoBoxes(boxes) {
   console.log(boxes[1]); // O(1)
 }
 
-firstTwoBoxes(boxes); // O(2)
+// firstTwoBoxes(boxes); // O(2)
 
 // ----NEXT----
 
@@ -123,7 +138,7 @@ function logAllPairsOfArray(array) {
   }
 }
 
-logAllPairsOfArray(boxes1); // O(n * n) = O(n^2)
+// logAllPairsOfArray(boxes1); // O(n * n) = O(n^2)
 
 // ----NEXT----
 function compressBoxesTwice(boxes, boxes2) {
