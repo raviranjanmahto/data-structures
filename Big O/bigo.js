@@ -157,4 +157,42 @@ function printAllNumbersThenAllPairSums(numbers) {
   });
 }
 
-printAllNumbersThenAllPairSums([1, 2, 3, 4, 5]); // O(n * n) = O(n^2)
+// printAllNumbersThenAllPairSums([1, 2, 3, 4, 5]); // O(n * n) = O(n^2)
+
+// ----NEXT----
+
+const array1 = ["a", "b", "c", "x"];
+const array2 = ["z", "y", "i"];
+
+const array3 = ["a", "b", "c", "x"];
+const array4 = ["z", "y", "x"];
+
+// 1)
+// function containCommonItems(array1, array2) {
+//   for (let i = 0; i < array1.length; i++) {
+//     for (let j = 0; j < array2.length; j++) {
+//       if (array1[i] === array2[j]) return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(containCommonItems(array3, array4)); // O(n) * O(n) = O(n^2)
+
+// 2)
+function containCommonItems2(array1, array2) {
+  let map = {};
+  for (let i = 0; i < array1?.length; i++) {
+    if (!map[array1[i]]) map[array1[i]] = true;
+  }
+  for (let j = 0; j < array2?.length; j++) {
+    if (map[array2[j]]) return true;
+  }
+  return false;
+}
+// console.log(containCommonItems2(array3, array4)); // O(n) + O(n) = O(n)
+
+// 3)
+function containsCommonItems3(array1, array2) {
+  return array1.some(item => array2.includes(item));
+}
+console.log(containsCommonItems3(array3, array4)); // O(n) * O(n) = O(n^2)
