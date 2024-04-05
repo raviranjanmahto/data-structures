@@ -168,14 +168,14 @@ const array3 = ["a", "b", "c", "x"];
 const array4 = ["z", "y", "x"];
 
 // 1)
-// function containCommonItems(array1, array2) {
-//   for (let i = 0; i < array1.length; i++) {
-//     for (let j = 0; j < array2.length; j++) {
-//       if (array1[i] === array2[j]) return true;
-//     }
-//   }
-//   return false;
-// }
+function containCommonItems(array1, array2) {
+  for (let i = 0; i < array1.length; i++) {
+    for (let j = 0; j < array2.length; j++) {
+      if (array1[i] === array2[j]) return true;
+    }
+  }
+  return false;
+}
 // console.log(containCommonItems(array3, array4)); // O(n) * O(n) = O(n^2)
 
 // 2)
@@ -195,4 +195,31 @@ function containCommonItems2(array1, array2) {
 function containsCommonItems3(array1, array2) {
   return array1.some(item => array2.includes(item));
 }
-console.log(containsCommonItems3(array3, array4)); // O(n) * O(n) = O(n^2)
+// console.log(containsCommonItems3(array3, array4)); // O(n) * O(n) = O(n^2)
+
+// ----Next----
+
+const array5 = [1, 2, 3, 9];
+const array6 = [1, 3, 4, 4];
+
+// 1) find pairs whose some is 8
+function hasPairWithSum(array, sum) {
+  for (let i = 0; i < array?.length; i++) {
+    for (let j = i + 1; j < array?.length; j++) {
+      if (array[i] + array[j] === sum) return true;
+    }
+  }
+  return false;
+}
+// console.log(hasPairWithSum(array6, 8)); // O(n^2)
+
+// 2)
+function hasPairWithSum2(array, sum) {
+  const mySet = new Set();
+  for (let i = 0; i < array?.length; i++) {
+    if (mySet.has(array[i])) return true;
+    mySet.add(sum - array[i]);
+  }
+  return false;
+}
+console.log(hasPairWithSum2(array6, 8)); // O(n)
