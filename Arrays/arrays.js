@@ -104,3 +104,25 @@ newArray.push("hi hi");
 // newArray.pop();
 newArray.delete(2);
 // console.log(newArray);
+
+// ----NEXT----
+// Create a function that reverse a string
+// 1) using for loop
+function reverseString(string) {
+  const str = [];
+  for (let i = string?.length - 1; i >= 0; i--) {
+    str.push(string[i]);
+  }
+  return str.join("");
+}
+// console.log(reverseString("My name is raviranjan mahto"));
+
+//2) using split and reverse
+function reverseString2(string) {
+  return string.split("").reverse().join("");
+}
+// console.log(reverseString2("My name is raviranjan mahto"));
+
+//3) using spread operator
+const reverseString3 = string => [...string].reverse().join("");
+console.log(reverseString3("My name is raviranjan mahto"));
