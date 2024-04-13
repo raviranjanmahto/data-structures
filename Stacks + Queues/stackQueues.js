@@ -45,5 +45,29 @@ myStack.push("discord");
 myStack.pop();
 myStack.pop();
 myStack.pop();
-console.log(myStack.peek());
-console.log(myStack);
+// console.log(myStack.peek());
+// console.log(myStack);
+
+// ----NEXT----
+// Using Arrays to implement Stack (Last In First Out) logic in JavaScript
+class ArrayStack {
+  constructor() {
+    this.stack = [];
+  }
+  peek = () => this.stack[this.stack.length - 1];
+
+  push(value) {
+    this.stack.push(value);
+    return this;
+  }
+  pop = () => this.stack.pop();
+}
+const myStack2 = new ArrayStack();
+myStack2.push("google");
+myStack2.push("udemy");
+myStack2.push("discord");
+myStack2.pop();
+// myStack2.pop();
+// myStack2.pop();
+console.log(myStack2.peek());
+console.log(myStack2);
