@@ -10,6 +10,7 @@ function bubbleSort(array) {
       }
     }
   }
+  return array;
 }
 const bubble = bubbleSort(numbers); // O(n^2)
 console.log(bubble);
